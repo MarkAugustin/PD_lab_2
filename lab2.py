@@ -23,6 +23,11 @@ while scroll_count < num_images // 25:
     element.send_keys(Keys.END)
     time.sleep(1)
     scroll_count += 1
+    try:
+        button = driver.find_element(By.CLASS_NAME, 'button2')
+        button.click()
+    except:
+        pass
 
 html = driver.page_source
 soup = BeautifulSoup(html, "html.parser")
